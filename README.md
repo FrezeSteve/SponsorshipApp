@@ -22,6 +22,7 @@ run "python manage.py runserver" command to run the django server
 
 copy the url to your browser
 
+# Browsing
 The application has three user: users applying for sponsorship, sponsors and staff.
 
 The staff are automatically registered by running the command "python manage.py createsuperuser".
