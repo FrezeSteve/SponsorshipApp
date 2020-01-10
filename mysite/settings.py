@@ -128,5 +128,5 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 EMAIL_HOST = 'localhost'
-EMAIL_HOST_USER = 'from@example.com'
+EMAIL_HOST_USER = 'parsifal_app'
 EMAIL_HOST_PASSWORD = 'testpassword'
