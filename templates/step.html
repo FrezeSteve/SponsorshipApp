@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    {% block content %}
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <div
+          class="col-11 col-sm-9 col-md-7 col-lg-6 col-xl-5 text-center p-0 mt-3 mb-2"
+        >
+          <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
+            <h2 id="heading">Apply For Sponsorship</h2>
+            <form id="msform" enctype="multipart/form-data" action="{% url 'form' %}" method="post">
+              {% csrf_token %}
+              <!-- progressbar -->
+              <ul id="progressbar">
+                <li class="active" id="account"><strong>Account</strong></li>
+                <li id="personal"><strong>Personal</strong></li>
+                <li id="file"><strong>Files</strong></li>
+                <li id="school"><strong>School</strong></li>
+              </ul>
+              <div class="progress">
+                <div
+                  class="progress-bar progress-bar-striped progress-bar-animated"
+                  role="progressbar"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+              </div>
+              <br />
+              <!-- fieldsets -->
+              {% include "account.html" %} {% include "personal.html" %} 
+              {% include "file.html" %} {% include 'school.html'%}
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endblock content %}
+    {%block scripts%}
+    <script src="{% static 'index.js' %}"></script>
+    {%endblock%}
+  </body>
+</html>
